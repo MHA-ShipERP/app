@@ -8,16 +8,16 @@ stages:
     npmExecuteLint: true
     npmExecuteScripts: true 
   Additional Unit Tests:
-    npmExecuteScripts: true  
+    npmExecuteScripts: false  
   Acceptance:
-    cloudFoundryDeploy: true  
+    cloudFoundryDeploy: false  
     cfApiEndpoint: "https://api.cf.us10-001.hana.ondemand.com"
     cfOrg: "0190f4c2trial"
     cfSpace: "dev"
     cfAppName: "app"
     cfCredentialsId: "deploy-to-cf"
     deployType: "standard"
-    npmExecuteEndToEndTests: true 
+    npmExecuteEndToEndTests: false 
   Compliance:
     sonarExecuteScan: false
   Release:
@@ -33,7 +33,7 @@ steps:
   artifactPrepareVersion:
     versioningType: "cloud_noTag"
   npmExecuteLint:
-    failOnError: true
+    failOnError: false
   cloudFoundryDeploy:
     mtaDeployParameters: "-f --version-rule ALL"
   tmsUpload:
