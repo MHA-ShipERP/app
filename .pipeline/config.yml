@@ -1,34 +1,34 @@
----
 general:
   buildTool: "mta"
 service:
   buildToolVersion: "MBTJ11N16" #see SAP Continuous Integration and Delivery service for more build tool version options
 stages:
   Build:
-    mavenExecuteStaticCodeChecks: false
+    mavenExecuteStaticCodeChecks: true 
     npmExecuteLint: true
+    npmExecuteScripts: true 
   Additional Unit Tests:
-    npmExecuteScripts: false
+    npmExecuteScripts: true  
   Acceptance:
-    cloudFoundryDeploy: false
+    cloudFoundryDeploy: true  
     cfApiEndpoint: "https://api.cf.us10-001.hana.ondemand.com"
     cfOrg: "0190f4c2trial"
     cfSpace: "dev"
     cfAppName: "app"
     cfCredentialsId: "deploy-to-cf"
     deployType: "standard"
-    npmExecuteEndToEndTests: false
+    npmExecuteEndToEndTests: true 
   Compliance:
     sonarExecuteScan: false
   Release:
-    cloudFoundryDeploy: false
+    cloudFoundryDeploy: true 
     cfApiEndpoint: "https://api.cf.us10-001.hana.ondemand.com"
     cfOrg: "0190f4c2trial"
     cfSpace: "dev"
     cfAppName: "app"
     cfCredentialsId: "deploy-to-cf"
     deployType: "standard"
-    tmsUpload: false
+    tmsUpload: true  
 steps:
   artifactPrepareVersion:
     versioningType: "cloud_noTag"
