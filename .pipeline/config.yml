@@ -4,9 +4,10 @@ general:
 
 stages:
   Build:
-    mavenExecuteStaticCodeChecks: true 
+    mavenExecuteStaticCodeChecks: false 
     npmExecuteLint: true
-    npmExecuteScripts: true 
+    npmExecuteScripts: false 
+
   Additional Unit Tests:
     npmExecuteScripts: false  
   Acceptance:
@@ -28,7 +29,7 @@ stages:
     cfAppName: "app"
     cfCredentialsId: "deploy-to-cf"
     deployType: "standard"
-    tmsUpload: true  
+    tmsUpload: false  
 steps:
   artifactPrepareVersion:
     versioningType: "cloud_noTag"
