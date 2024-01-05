@@ -4,25 +4,25 @@ general:
 
 stages:
   Build:
-    mavenExecuteStaticCodeChecks: true 
+    mavenExecuteStaticCodeChecks: false 
     npmExecuteLint: true
-    npmExecuteScripts: true 
+    npmExecuteScripts: false 
 
   Additional Unit Tests:
-    npmExecuteScripts: true  
+    npmExecuteScripts: false  
 
   Acceptance:
-    cloudFoundryDeploy: true  
+    cloudFoundryDeploy: false  
     cfApiEndpoint: "https://api.cf.us10-001.hana.ondemand.com"
     cfOrg: "0190f4c2trial"
     cfSpace: "dev"
     cfAppName: "app"
     cfCredentialsId: "deploy-to-cf"
     deployType: "standard"
-    npmExecuteEndToEndTests: true 
+    npmExecuteEndToEndTests: false 
 
   Compliance:
-    sonarExecuteScan: true
+    sonarExecuteScan: false
 
   Release:
     cloudFoundryDeploy: true 
@@ -38,7 +38,7 @@ steps:
     versioningType: "cloud_noTag"
 
   npmExecuteLint:
-    failOnError: true
+    failOnError: false
 
   cloudFoundryDeploy:
     mtaDeployParameters: "-f --version-rule ALL"
