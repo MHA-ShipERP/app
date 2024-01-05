@@ -6,10 +6,10 @@ stages:
   Build:
     mavenExecuteStaticCodeChecks: false 
     npmExecuteLint: true
-    npmExecuteScripts: false 
 
   Additional Unit Tests:
-    npmExecuteScripts: false  
+    npmExecuteScripts: false 
+    karmaExecuteTests: false
 
   Acceptance:
     cloudFoundryDeploy: false  
@@ -19,7 +19,7 @@ stages:
     cfAppName: "app"
     cfCredentialsId: "deploy-to-cf"
     deployType: "standard"
-    npmExecuteEndToEndTests: false 
+    uiVeri5ExecuteTests: false 
 
   Compliance:
     sonarExecuteScan: false
