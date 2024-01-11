@@ -1,2 +1,2 @@
 # app - App
->My Business Application - Michael Ha
+>My Business Application - Michael
