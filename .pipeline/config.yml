@@ -31,7 +31,7 @@ stages:
     cfSpace: "dev"
     cfAppName: "app"
     cfCredentialsId: "deploy-to-cf"
-    tmsUpload: true  
+    tmsUpload: false  
 
 steps:
   artifactPrepareVersion:
